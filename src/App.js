@@ -1,8 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.svg';
+//import './App.css';
+import {Provider} from 'react-redux';
+import store from './store';
 
-function App() {
+import Players from './components/Players';
+import OfficialTeam from './components/Officialteam';
+
+import "./styles/styles.scss";
+
+/* function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +28,16 @@ function App() {
       </header>
     </div>
   );
-}
+} */
+
+const App = () => (
+  <Provider store={store}>
+    <main>
+      <h1>StarTeam</h1>
+      <Players/>
+      <OfficialTeam/>
+    </main>
+  </Provider>
+)
 
 export default App;
